@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, json
 import numpy as np
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your secret key'
-
 
 def findCoordinates(imageDimension, corners):
     rows, columns = imageDimension[0], imageDimension[1] 
@@ -26,8 +24,7 @@ def findCoordinates(imageDimension, corners):
 
 @app.route('/', methods = ['POST', 'GET'])
 def image():   
-    if request.method == 'POST':
-        
+    if request.method == 'POST':        
         d = request.form
         imageDimension = int(d['r']), int(d['c'])
         corner1 = float(d['x1']), float(d['y1'])
@@ -35,13 +32,13 @@ def image():
         corner3 = float(d['x3']), float(d['y3'])
         corner4 = float(d['x4']), float(d['y4'])
         corners = [corner1, corner2, corner3, corner4]
-
-        zz = np.round(findCoordinates(imageDimension, corners), 2)
-        solution = zz.tolist()
+        
+        zz = np.round(findCoordinates(imageDimension, corners), 2)        
+        solution = zz.tolist()    
         return render_template('image.html', solution=solution, imageDimension=imageDimension, corners=corners)
 
     else:
         return render_template('image.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
