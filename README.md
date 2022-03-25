@@ -6,7 +6,7 @@ Simple Flask app that allows finding pixel coordinates based on user-defined ima
 The easier way to run this web service is to run it through a Docker container. The web service is packed in a Docker container, which can be found [here](https://hub.docker.com/r/xuxiaqing2011/pixels). In order to be able to pull and run a Docker container, you'll need [Docker](https://docs.docker.com/get-docker/) installed if you haven't already done so.
 
 ### Commands
-#### Pull Docker image 
+#### Pull Docker image: 
 ```bash
 docker pull xuxiaqing2011/pixels
 ```
@@ -14,7 +14,7 @@ docker pull xuxiaqing2011/pixels
 ```bash
 docker run -p 5000:5000 -d xuxiaqing2011/pixels
 ```
-#### Now GET/POST request can be sent.
+#### Send GET/POST requests:
 ###### GET request
 ```bash
 curl http://localhost:5000
