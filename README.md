@@ -24,7 +24,7 @@ curl http://localhost:5000
 curl -d "r=3&c=3&x1=1&y1=1&x2=3&y2=3&x3=1&y3=3&x4=3&y4=1" -X POST http://127.0.0.1:5000 
 ```
 Note: Content-Type: application/x-www-form-urlencoded
-<br>
+
 In addition, if you have previously run the container in detached mode, the web service then can be accesed through your browser. Navigate to http://localhost:5000 .   
 
 A GET request renders the form where image dimension and corner coordinates can be entered and submitted, so that a POST request can do the calculation and display the result. 
