@@ -15,11 +15,11 @@ docker pull xuxiaqing2011/pixels
 docker run -p 5000:5000 -d xuxiaqing2011/pixels
 ```
 #### Send GET/POST requests:
-###### GET request
+* ###### GET request
 ```bash
 curl http://localhost:5000
 ```
-###### POST request
+* ###### POST request
 ```bash
 curl -d "r=3&c=3&x1=1&y1=1&x2=3&y2=3&x3=1&y3=3&x4=3&y4=1" -X POST http://127.0.0.1:5000 
 ```
